@@ -1,4 +1,4 @@
-theme = "dracula"
+theme = "everforest_light"
 
 [editor]
 line-number = "absolute"
@@ -10,6 +10,8 @@ true-color = true
 completion-trigger-len = 1
 idle-timeout = 0
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+clipboard-provider = "termcode"
+
 
 [editor.whitespace]
 render = "all"
@@ -39,16 +41,18 @@ display-messages = true
 
 [keys.normal]
 "C-s" = ":w"
-"tab" = ":buffer-next"
-"S-tab" = ":buffer-previous"
-"C-w" = ":buffer-close"
-"g" = { v = "jump_backward"}
-space.g.b = ":sh git log -n 5 --pretty=format:'[%%h](%%cd %%cn): %%s' --no-patch -L%{cursor_line},+1:%{buffer_name}"
-space.g.g = "changed_file_picker"
-space.q = ":q!"
+"C-q" = "jump_backward"
+space.q = ":q"
+"C-c" = ["yank_main_selection_to_clipboard"]
+"C-v" = [":clipboard-paste-after"]
+space.space = "file_picker"
 
 [keys.insert]
 "C-s" = ["normal_mode",":w"]
-"tab" = ":buffer-next"
-"S-tab" = ":buffer-previous"
-"C-w" = ":buffer-close"
+"C-c" = ["yank_main_selection_to_clipboard"]
+"C-v" = [":clipboard-paste-after"]
+
+[keys.select]
+"C-s" = ["normal_mode", ":w"]
+"C-c" = ["yank_main_selection_to_clipboard"]
+"C-v" = ["normal_mode",":clipboard-paste-replace"]
