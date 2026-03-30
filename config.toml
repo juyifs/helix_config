@@ -2,11 +2,12 @@ theme = "everforest_light"
 
 [editor]
 line-number = "absolute"
-mouse = true
+mouse = false
 cursorline = true
 bufferline = "multiple"
 color-modes = true
 true-color = true
+auto-completion = true
 completion-trigger-len = 1
 idle-timeout = 0
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
@@ -44,15 +45,25 @@ display-messages = true
 "C-q" = "jump_backward"
 space.q = ":q"
 "C-c" = ["yank_main_selection_to_clipboard"]
-"C-v" = [":clipboard-paste-after"]
+"C-v" = ["paste_clipboard_after"]
 space.space = "file_picker"
+space.b.d = ":bc"
+space.b.o = ":bco"
+space.f.f = "file_picker"
+space.f.F = "file_picker_in_current_directory"
+space.f.b = "buffer_picker"
+space.s.s = "symbol_picker"
+space.s.S = "workspace_symbol_picker"
+space.s.b = [":sh echo %{buffer_name} | pbcopy", "global_search"]
+space.s.g = "global_search"
+space.s.w = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection", "global_search"]
 
 [keys.insert]
 "C-s" = ["normal_mode",":w"]
 "C-c" = ["yank_main_selection_to_clipboard"]
-"C-v" = [":clipboard-paste-after"]
+"C-v" = ["paste_clipboard_after"]
 
 [keys.select]
 "C-s" = ["normal_mode", ":w"]
 "C-c" = ["yank_main_selection_to_clipboard"]
-"C-v" = ["normal_mode",":clipboard-paste-replace"]
+"C-v" = ["replace_selections_with_clipboard"]
