@@ -92,6 +92,7 @@ space.g.b = [
 space.c.f = ":pipe ~/.config/helix/my-formatter.sh %{buffer_name}"
 space.c.F = ":format"
 space.c.c = "toggle_comments"
+"["."s" = "@maf<A-;>;"
 
 [keys.insert]
 "C-s" = ["normal_mode", ":w"]
