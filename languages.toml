@@ -1,0 +1,19 @@
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+
+[[language]]
+name = "cpp"
+formatter = { command = "clang-format", args = ["-i", "--style=Google"] }
+
+[[language]]
+name = "c"
+formatter = { command = "clang-format", args = ["-i"] }
+
+[[language]]
+name = "java"
+formatter = { command = "google-java-format", args = ["-"] }
+
+[[language]]
+name = "lua"
+formatter = { command = "stylua", args = ["-"] }
