@@ -93,6 +93,8 @@ space.c.f = ":pipe ~/.config/helix/my-formatter.sh %{buffer_name}"
 space.c.F = ":format"
 space.c.c = "toggle_comments"
 "["."s" = "@maf<A-;>;"
+space.f.c = "changed_file_picker"
+space.g.r = ":reset-diff-change"
 
 [keys.insert]
 "C-s" = ["normal_mode", ":w"]
