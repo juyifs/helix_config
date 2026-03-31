@@ -2,7 +2,7 @@ theme = "everforest_light"
 
 [editor]
 line-number = "absolute"
-mouse = false
+mouse = true
 cursorline = true
 bufferline = "multiple"
 color-modes = true
@@ -54,9 +54,14 @@ space.f.F = "file_picker_in_current_directory"
 space.f.b = "buffer_picker"
 space.s.s = "symbol_picker"
 space.s.S = "workspace_symbol_picker"
-space.s.b = [":sh echo %{buffer_name} | pbcopy", "global_search"]
-space.s.g = "global_search"
-space.s.w = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection", "global_search"]
+space.s.b = "@<space>/ %p <C-r>%<C-a>"
+space.s.g = [":clear-register","global_search"]
+space.s.w = "@lbe*<space>/(?-i)<C-r>/"
+space.s.W = "@lbe*<space>/(?-i)<C-r>/ %p <C-r>%"
+tab = ":buffer-next"
+S-tab = ":buffer-previous"
+space.g.b = ":sh git log -n 5 --pretty=format:'[%%h](%%cd %%cn): %%s' --no-patch -L%{cursor_line},+1:%{buffer_name}"
+space.g.g = "changed_file_picker"
 
 [keys.insert]
 "C-s" = ["normal_mode",":w"]
