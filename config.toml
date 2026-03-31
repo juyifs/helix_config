@@ -61,7 +61,14 @@ space.s.W = "@lbe*<space>/(?-i)<C-r>/ %p <C-r>%"
 tab = ":buffer-next"
 S-tab = ":buffer-previous"
 space.g.b = ":sh git log -n 5 --pretty=format:'[%%h](%%cd %%cn): %%s' --no-patch -L%{cursor_line},+1:%{buffer_name}"
-space.g.g = "changed_file_picker"
+space.g.g = [
+  ":write-all",           # 先把所有缓冲区保存
+  ":new",                 # 打开一个临时空缓冲区
+  ":insert-output lazygit",# 在该缓冲区里运行 lazygit（占满界面）
+  ":buffer-close!",       # 退出 lazygit 后，关闭这个临时缓冲区
+  ":redraw",              # 重绘 UI
+  ":reload-all"           # 重新加载文件，刷新 Git 侧边标记
+]
 
 [keys.insert]
 "C-s" = ["normal_mode",":w"]
