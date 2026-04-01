@@ -17,3 +17,17 @@ formatter = { command = "google-java-format", args = ["-"] }
 [[language]]
 name = "lua"
 formatter = { command = "stylua", args = ["-"] }
+
+# 定义 PlantUML 语言
+[[language]]
+name = "plantuml"
+scope = "source.pu"
+injection-regex = "puml|plantuml"
+file-types = ["puml", "plantuml", "pu", "wsd"]
+comment-token = "'"
+indent = { tab-width = 2, unit = " " }
+
+[[grammar]]
+name = "plantuml"
+source = { git = "https://github.com/Decodetalkers/tree_sitter_plantuml.git", rev = "gh-pages"}
+
