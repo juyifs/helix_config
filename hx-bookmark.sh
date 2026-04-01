@@ -5,8 +5,7 @@ BOOKMARK_FILE="./.helix_bookmarks"
 
 case "$1" in
     add)
-        # 从管道读取备注内容
-        remark=$(cat)
+        remark=$4
         # 如果没有选中内容，备注默认为 "No remark"
         [ -z "$remark" ] && remark="No remark"
         # 参数: 文件路径 行号 备注
@@ -18,4 +17,3 @@ case "$1" in
         [ -f "$BOOKMARK_FILE" ] && cat -n "$BOOKMARK_FILE"
         ;;
 esac
-
