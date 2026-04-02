@@ -100,7 +100,7 @@ space.s.j = "save_selection"
 # 保存书签：提示输入备注，并发送当前文件、行号和备注到脚本
 S-m = "@:sh ~/.config/helix/hx-bookmark.sh add %{file_path_absolute} %{cursor_line} "
 # 查看并跳转：打开书签文件，手动跳转 (Helix 暂不支持直接解析外部输出并跳转)
-space.s.m = [":open ./.helix_bookmarks",":reload"]
+space.s.m = [":open ./.helix/.helix_bookmarks",":reload"]
 # “跳转到书签”：选中当前行，将其作为 :open 的参数执行
 # 这会解析 path:line 格式
 g.b = [
