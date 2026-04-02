@@ -1,7 +1,7 @@
 #!/bin/bash
 # 路径: ~/.config/helix/hx-bookmark.sh
 
-BOOKMARK_FILE="./.helix_bookmarks"
+BOOKMARK_FILE="./.helix/.helix_bookmarks"
 
 case "$1" in
     add)
