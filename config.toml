@@ -1,4 +1,4 @@
-theme = "everforest_dark"
+theme = "everforest_light"
 
 [editor]
 line-number = "absolute"
@@ -15,7 +15,7 @@ clipboard-provider = "termcode"
 
 
 [editor.whitespace]
-render = "all"
+render = "none"
 
 [editor.indent-guides]
 render = true
