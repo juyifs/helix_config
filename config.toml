@@ -50,7 +50,29 @@ display-messages = true
 [keys.normal]
 "C-s" = ":w"
 "C-q" = "jump_backward"
-space.q = ":q"
+space.q = [
+  ":sh rm -rf ./.helix/.session",
+  ":sh ~/.config/helix/save_session.sh %{file_path_absolute} %{cursor_line}",
+  ":bc!",
+  ":sh ~/.config/helix/save_session.sh %{file_path_absolute} %{cursor_line}",
+  ":bc!",
+  ":sh ~/.config/helix/save_session.sh %{file_path_absolute} %{cursor_line}",
+  ":bc!",
+  ":sh ~/.config/helix/save_session.sh %{file_path_absolute} %{cursor_line}",
+  ":bc!",
+  ":sh ~/.config/helix/save_session.sh %{file_path_absolute} %{cursor_line}",
+  ":bc!",
+  ":sh ~/.config/helix/save_session.sh %{file_path_absolute} %{cursor_line}",
+  ":bc!",
+  ":sh ~/.config/helix/save_session.sh %{file_path_absolute} %{cursor_line}",
+  ":bc!",
+  ":sh ~/.config/helix/save_session.sh %{file_path_absolute} %{cursor_line}",
+  ":bc!",
+  ":sh ~/.config/helix/save_session.sh %{file_path_absolute} %{cursor_line}",
+  ":bc!",
+  ":sh ~/.config/helix/save_session.sh %{file_path_absolute} %{cursor_line}",
+  ":q",
+]
 "C-c" = ["yank_main_selection_to_clipboard"]
 "C-v" = ["paste_clipboard_after"]
 space.space = "file_picker"
