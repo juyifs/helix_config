@@ -72,7 +72,7 @@
 "ui.cursor.primary" = { fg = "bg0", bg = "fg" }
 "ui.cursorline.primary" = { bg = "bg_blue_custom" }
 "ui.cursorline.secondary" = { bg = "bg2" }
-"ui.selection" = { bg = "bg_red_custom" }
+"ui.selection" = { bg = "bg3" }
 "ui.linenr" = "grey0"
 "ui.linenr.selected" = "grey2"
 "ui.statusline" = { fg = "grey2", bg = "bg3" }
