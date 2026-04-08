@@ -18,6 +18,10 @@ formatter = { command = "google-java-format", args = ["-"] }
 name = "lua"
 formatter = { command = "stylua", args = ["-"] }
 
+[[language]]
+name = "rust"
+formatter = { command = "rustfmt", args = ["--edition", "2021"] }
+
 # 定义 PlantUML 语言
 [[language]]
 name = "plantuml"
