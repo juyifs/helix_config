@@ -46,6 +46,7 @@ mode.select = "SELECT"
 
 [editor.lsp]
 display-messages = true
+auto-document-highlight = true
 
 [keys.normal]
 "C-s" = ":w"
