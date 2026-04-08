@@ -26,6 +26,10 @@ case "$EXT" in
         # python 使用 black 或 ruff
         black -q -
         ;;
+    rs)
+        # rust 使用 rustfmt
+        rustfmt --edition 2021
+        ;;
     js|ts|jsx|tsx|json|html|css)
         # 前端全家桶通常交给 prettier
         prettier --stdin-filepath "$FILENAME"
