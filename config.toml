@@ -135,6 +135,8 @@ g.b = [
   "exit_select_mode"
 ]
 space.f.p = ":sh ~/.config/helix/file-preview.sh %{buffer_name}"
+A-j = "@Xdp"
+A-k = "@XdkP"
 
 [keys.insert]
 "C-s" = ["normal_mode", ":w"]
