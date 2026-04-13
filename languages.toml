@@ -16,7 +16,7 @@ formatter = { command = "google-java-format", args = ["-"] }
 roots = [".project", ".classpath", ".git", "pom.xml", "build.gradle", "build.gradle.kts"]
 
 [language-server.jdtls]
-command = "~/.config/.helix/jdtls-helix"
+command = "jdtls-helix"
 args = []
 
 [[language]]
