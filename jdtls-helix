@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# 你可以按需扩展/删减 marker
+MARKERS=(
+  ".git"
+  "pom.xml"
+  "build.gradle"
+  "settings.gradle"
+  "build.gradle.kts"
+  "settings.gradle.kts"
+  ".project"
+  ".classpath"
+)
+
+# 从当前工作目录向上找项目根
+find_root() {
+  local dir="$PWD"
+  while true; do
+    for m in "${MARKERS[@]}"; do
+      if [[ -e "$dir/$m" ]]; then
+        echo "$dir"
+        return 0
+      fi
+    done
+    [[ "$dir" == "/" ]] && break
+    dir="$(dirname "$dir")"
+  done
+
+  # 找不到 marker 就退回当前目录
+  echo "$PWD"
+}
+
+ROOT="$(find_root)"
+
+# 生成一个稳定的 hash（优先 sha1sum，其次 shasum；都没有就用 python）
+hash_path() {
+  local s="$1"
+  if command -v sha1sum >/dev/null 2>&1; then
+    printf "%s" "$s" | sha1sum | awk '{print $1}'
+  elif command -v shasum >/dev/null 2>&1; then
+    printf "%s" "$s" | shasum -a 1 | awk '{print $1}'
+  else
+    python3 - <<'PY'
+import hashlib, os, sys
+s = sys.stdin.read().encode("utf-8")
+print(hashlib.sha1(s).hexdigest())
+PY
+  fi
+}
+
+BASENAME="$(basename "$ROOT")"
+H="$(hash_path "$ROOT")"
+WORKSPACE_BASE="${XDG_CACHE_HOME:-$HOME/.cache}/jdtls/workspaces"
+WORKSPACE="${WORKSPACE_BASE}/${BASENAME}-${H}"
+
+mkdir -p "$WORKSPACE"
+
+# 可选：给 jdtls 多一点内存（大项目推荐）
+JVM_OPTS=(-J-Xms1g -J-Xmx4g)
+# JVM_OPTS=()
+
+exec jdtls "${JVM_OPTS[@]}" -data "$WORKSPACE"
+``
