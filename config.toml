@@ -12,6 +12,7 @@ completion-trigger-len = 1
 idle-timeout = 0
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
 clipboard-provider = "termcode"
+soft-wrap.enable = true
 
 
 [editor.whitespace]

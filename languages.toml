@@ -13,12 +13,7 @@ formatter = { command = "clang-format", args = ["-i"] }
 [[language]]
 name = "java"
 formatter = { command = "google-java-format", args = ["-"] }
-roots = ["pom.xml", "build.gradle", "build.gradle.kts", ".git", ".classpath"]
-
-[language-server.jdtls]
-command = "jdtls"
-# 可以在 args 中配置数据持久化路径，防止每次重启都全量扫描
-args = ["-data", "./.helix"]
+roots = [".project", ".classpath", ".git", "pom.xml", "build.gradle", "build.gradle.kts"]
 
 [[language]]
 name = "lua"
