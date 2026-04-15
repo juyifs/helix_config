@@ -138,6 +138,7 @@ g.b = [
 space.f.p = ":sh ~/.config/helix/file-preview.sh %{buffer_name}"
 A-j = "@Xdp"
 A-k = "@XdkP"
+"C-x" = ["yank_main_selection_to_clipboard", "delete_selection"]
 
 [keys.insert]
 "C-s" = ["normal_mode", ":w"]
