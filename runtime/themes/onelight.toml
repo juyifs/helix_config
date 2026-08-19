@@ -101,7 +101,7 @@
 "diff.delta.moved" = { fg = "cyan" }
 "diff.delta.conflict" = {fg = "blue"}
 
-"ui.background" = { bg = "white" }
+"ui.background" = { fg = "black", bg = "white" }
 "ui.background.separator" = { fg = "blue", bg = "white" }
 
 "ui.cursor" = { fg = "white", bg = "grey" }
@@ -132,7 +132,7 @@
 "ui.help" = { fg = "black", bg = "grey-200" }
 
 "ui.text" = { fg = "black" }
-"ui.text.focus" = { fg = "red", bg = "grey-300", modifiers = ["bold"] }
+"ui.text.focus" = { fg = "red", bg = "pale-blue", modifiers = ["bold"] }
 "ui.text.inactive" = { fg = "grey" }
 "ui.text.info" = { fg = "black" }
 "ui.text.directory" = { fg = "blue", underline = { style = "line" } }
@@ -160,7 +160,7 @@
 "ui.cursorcolumn.primary" = { fg = "white", bg = "grey-100" }
 "ui.cursorcolumn.secondary" = { fg = "white", bg = "grey-200" }
 
-"ui.highlight" = { bg = "grey-300" }
+"ui.highlight" = { bg = "pale-blue" }
 
 "ui.picker.header" = { fg = "purple"}
 "ui.picker.header.column.active" = { fg = "blue"}
