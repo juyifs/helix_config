@@ -5,10 +5,12 @@ formatter = { command = "taplo", args = ["fmt", "-"] }
 [[language]]
 name = "cpp"
 formatter = { command = "clang-format", args = ["-i", "--style=Google"] }
+indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "c"
 formatter = { command = "clang-format", args = ["-i"] }
+indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "java"

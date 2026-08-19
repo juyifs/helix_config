@@ -1,57 +1,57 @@
-theme = "everforest_dark"
+theme = "onelight"      # 配色主题：everforest_dark
 
 [editor]
-line-number = "absolute"
-mouse = true
-cursorline = true
-bufferline = "multiple"
-color-modes = true
-true-color = true
-auto-completion = true
-completion-trigger-len = 1
-idle-timeout = 0
-gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
-clipboard-provider = "termcode"
-soft-wrap.enable = true
+line-number = "absolute"       # 行号显示模式：absolute 显示绝对行号
+mouse = true                   # 启用鼠标支持
+cursorline = true              # 高亮当前光标所在行
+bufferline = "multiple"        # 仅在打开多个缓冲区时显示标签栏
+color-modes = true             # 状态栏按模式显示不同颜色
+true-color = true              # 启用真彩色支持
+auto-completion = true         # 启用自动补全
+completion-trigger-len = 1     # 输入 1 个字符后触发自动补全
+idle-timeout = 0               # 自动补全延迟（毫秒），0 表示不自动触发
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]  # 侧边栏显示：差异、诊断、行号、占位
+clipboard-provider = "termcode"  # 剪贴板提供方式：使用终端转义序列
+soft-wrap.enable = true        # 启用自动换行
 
 
 [editor.whitespace]
-render = "none"
+render = "none"                # 不渲染空白字符
 
 [editor.indent-guides]
-render = true
-skip-levels = 1
-character = "╎"
+render = true                  # 显示缩进引导线
+skip-levels = 1                # 跳过第 1 层缩进
+character = "╎"                # 缩进引导线字符
 
 
 [editor.cursor-shape]
-insert = "bar"
-normal = "block"
-select = "underline"
+insert = "bar"                 # 插入模式光标：竖线
+normal = "block"               # 普通模式光标：方块
+select = "underline"           # 选择模式光标：下划线
 
 [editor.statusline]
-left = ["mode", "spinner", "file-name"]
+left = ["mode", "spinner", "file-name"]  # 状态栏左侧显示：模式、加载动画、文件名
 # center = ["file-name"]
 right = [
-  "diagnostics",
-  "selections",
-  "position",
-  "file-encoding",
-  "file-line-ending",
-  "file-type",
+  "diagnostics",               # 诊断信息
+  "selections",                # 选区数量
+  "position",                  # 光标位置
+  "file-encoding",             # 文件编码
+  "file-line-ending",          # 文件换行符
+  "file-type",                 # 文件类型
 ]
-separator = "|"
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
+separator = "|"                # 状态栏元素分隔符
+mode.normal = "NORMAL"         # 普通模式标签
+mode.insert = "INSERT"         # 插入模式标签
+mode.select = "SELECT"         # 选择模式标签
 
 [editor.lsp]
-display-messages = true
-auto-document-highlight = true
+display-messages = true        # 在状态栏显示 LSP 消息
+auto-document-highlight = true  # 自动高亮文档中相同符号
 
 [keys.normal]
-"C-s" = ":w"
-"C-q" = "jump_backward"
+"C-s" = ":wa"                # Ctrl+S：保存所有缓冲区
+"C-q" = "jump_backward"      # Ctrl+Q：向后跳转
 space.q = [
   ":sh rm -rf ./.helix/.session",
   ":sh ~/.config/helix/save_session.sh %{file_path_absolute} %{cursor_line}",
@@ -73,25 +73,27 @@ space.q = [
   ":sh ~/.config/helix/save_session.sh %{file_path_absolute} %{cursor_line}",
   ":bc!",
   ":sh ~/.config/helix/save_session.sh %{file_path_absolute} %{cursor_line}",
+  ":bc!",
+  ":sh ~/.config/helix/save_session.sh %{file_path_absolute} %{cursor_line}",
   ":q",
 ]
-"C-c" = ["yank_main_selection_to_clipboard"]
-"C-v" = ["paste_clipboard_after"]
-space.space = "file_picker"
-space.b.d = ":bc!"
-space.b.o = ":bco"
-space.f.f = "file_picker"
-space.f.F = "file_picker_in_current_directory"
-space.f.b = "buffer_picker"
-space.s.s = "symbol_picker"
-space.s.S = "workspace_symbol_picker"
+"C-c" = ["yank_main_selection_to_clipboard"]  # Ctrl+C：复制到系统剪贴板
+"C-v" = ["paste_clipboard_after"]             # Ctrl+V：从系统剪贴板粘贴
+space.space = "file_picker"    # Space+Space：打开文件选择器
+space.b.d = ":bc!"             # Space+b+d：强制关闭当前缓冲区
+space.b.o = ":bco"             # Space+b+o：关闭其他缓冲区
+space.f.f = "file_picker"       # Space+f+f：打开文件选择器
+space.f.F = "file_picker_in_current_directory"  # Space+f+F：在当前目录打开文件选择器
+space.f.b = "buffer_picker"    # Space+f+b：打开缓冲区选择器
+space.s.s = "symbol_picker"    # Space+s+s：打开当前文件符号选择器
+space.s.S = "workspace_symbol_picker"  # Space+s+S：打开工作区符号选择器
 space.s.b = "@:clear-register<ret><space>/ %p <C-r>%<C-a>"
-space.s.g = [":clear-register", "global_search"]
+space.s.g = [":clear-register", "global_search"]  # Space+s+g：全局搜索
 space.s.w = "@lbe*<space>/(?-i)<C-r>/"
 space.s.W = "@lbe*<space>/(?-i)<C-r>/ %p <C-r>%"
-"/" = [":clear-register", "search"]
-tab = ":buffer-next"
-S-tab = ":buffer-previous"
+"/" = [":clear-register", "search"]  # /：清空寄存器并搜索
+tab = ":buffer-next"           # Tab：切换到下一个缓冲区
+S-tab = ":buffer-previous"     # Shift+Tab：切换到上一个缓冲区
 space.g.g = [
   ":write-all",             # 先把所有缓冲区保存
   ":new",                   # 打开一个临时空缓冲区
@@ -114,38 +116,38 @@ space.g.b = [
   ":set-language diff",
 ]
 
-space.c.f = ":pipe ~/.config/helix/my-formatter.sh %{buffer_name}"
-space.c.F = ":format"
-space.c.c = "toggle_comments"
+space.c.f = ":pipe ~/.config/helix/my-formatter.sh %{buffer_name}"  # Space+c+f：使用自定义脚本格式化
+space.c.F = ":format"           # Space+c+F：使用内置 LSP 格式化
+space.c.c = "toggle_comments"  # Space+c+c：切换注释
 "["."s" = "@maf<A-;>;"
-space.f.c = "changed_file_picker"
-space.g.r = ":reset-diff-change"
-space.c.r = ":config-reload"
-space.s.j = "save_selection"
+space.f.c = "changed_file_picker"  # Space+f+c：显示已更改文件选择器
+space.g.r = ":reset-diff-change"   # Space+g+r：重置差异修改
+space.c.r = ":config-reload"     # Space+c+r：重新加载配置
+space.s.j = "save_selection"     # Space+s+j：保存选区
 # 保存书签：提示输入备注，并发送当前文件、行号和备注到脚本
 S-m = "@:sh ~/.config/helix/hx-bookmark.sh add %{file_path_absolute} %{cursor_line} "
 # 查看并跳转：打开书签文件，手动跳转 (Helix 暂不支持直接解析外部输出并跳转)
 space.s.m = [":open ./.helix/.helix_bookmarks",":reload"]
-# “跳转到书签”：选中当前行，将其作为 :open 的参数执行
+# "跳转到书签"：选中当前行，将其作为 :open 的参数执行
 # 这会解析 path:line 格式
 g.b = [
   "goto_line_start",
-  "select_mode", 
+  "select_mode",
   "goto_line_end",       # 选中到行末（但不包含换行符）
   ":open %{selection}",
   "exit_select_mode"
 ]
-space.f.p = ":sh ~/.config/helix/file-preview.sh %{buffer_name}"
-A-j = "@Xdp"
-A-k = "@XdkP"
-"C-x" = ["yank_main_selection_to_clipboard", "delete_selection"]
+space.f.p = ":sh ~/.config/helix/file-preview.sh %{buffer_name}"  # Space+f+p：文件预览脚本
+A-j = "@Xdp"                   # Alt+J：向下移动选区并复制
+A-k = "@XdkP"                  # Alt+K：向上移动选区并复制
+"C-x" = ["yank_main_selection_to_clipboard", "delete_selection"]  # Ctrl+X：剪切到剪贴板
 
 [keys.insert]
-"C-s" = ["normal_mode", ":w"]
-"C-c" = ["yank_main_selection_to_clipboard"]
-"C-v" = ["paste_clipboard_after"]
+"C-s" = ["normal_mode", ":w"]                 # Ctrl+S：返回普通模式并保存
+"C-c" = ["yank_main_selection_to_clipboard"]  # Ctrl+C：复制
+"C-v" = ["paste_clipboard_after"]             # Ctrl+V：粘贴
 
 [keys.select]
-"C-s" = ["normal_mode", ":w"]
-"C-c" = ["yank_main_selection_to_clipboard"]
-"C-v" = ["replace_selections_with_clipboard"]
+"C-s" = ["normal_mode", ":w"]                      # Ctrl+S：返回普通模式并保存
+"C-c" = ["yank_main_selection_to_clipboard"]       # Ctrl+C：复制
+"C-v" = ["replace_selections_with_clipboard"]      # Ctrl+V：替换选区
