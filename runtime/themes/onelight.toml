@@ -102,7 +102,7 @@
 "diff.delta.conflict" = {fg = "blue"}
 
 "ui.background" = { bg = "white" }
-"ui.background.separator" = { bg = "white" }
+"ui.background.separator" = { fg = "blue", bg = "white" }
 
 "ui.cursor" = { fg = "white", bg = "grey" }
 "ui.cursor.normal" = { fg = "white", bg = "grey" }
@@ -128,7 +128,7 @@
 
 "ui.popup" = { fg = "black", bg = "grey-200" }
 "ui.popup.info" = { fg = "black", bg = "grey-200" }
-"ui.window" = { fg = "grey-500", bg = "grey-100" }
+"ui.window" = { fg = "blue", bg = "grey-100" }
 "ui.help" = { fg = "black", bg = "grey-200" }
 
 "ui.text" = { fg = "black" }
@@ -154,7 +154,7 @@
 "ui.selection" = { bg = "grey-300", modifiers = ["dim"] }
 "ui.selection.primary" = { bg = "grey-300" }
 
-"ui.cursorline.primary" = { fg = "white", bg = "grey-100" }
+"ui.cursorline.primary" = { fg = "white", bg = "pale-blue" }
 "ui.cursorline.secondary" = { fg = "white", bg = "grey-200" }
 
 "ui.cursorcolumn.primary" = { fg = "white", bg = "grey-100" }
@@ -164,6 +164,10 @@
 
 "ui.picker.header" = { fg = "purple"}
 "ui.picker.header.column.active" = { fg = "blue"}
+
+"ui.bufferline" = { fg = "black", bg = "grey-300" }
+"ui.bufferline.active" = { fg = "black", bg = "green", modifiers = ["bold"] }
+"ui.bufferline.background" = { bg = "grey-300" }
 
 "diagnostic.info" = { underline = { color = "blue", style = "dotted" } }
 "diagnostic.hint" = { underline = { color = "green", style = "dashed" } }
@@ -186,6 +190,7 @@ gold = "#D35400"
 brown = "#795548"
 blue = "#0061FF"
 light-blue = "#0091EA"
+pale-blue = "#E3F2FD"
 red = "#D50000"
 pink = "#C2185B"
 purple = "#B500A9"
