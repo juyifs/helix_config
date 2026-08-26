@@ -151,8 +151,8 @@
 "ui.menu.selected" = { fg = "white", bg = "light-blue" }
 "ui.menu.scroll" = { fg = "light-blue", bg = "white" }
 
-"ui.selection" = { bg = "grey-300", modifiers = ["dim"] }
-"ui.selection.primary" = { bg = "purple", fg = "white" }
+"ui.selection" = { bg = "dark-green" }
+"ui.selection.primary" = { bg = "dark-green" }
 
 "ui.cursorline.primary" = { fg = "white", bg = "pale-blue" }
 "ui.cursorline.secondary" = { fg = "white", bg = "grey-200" }
@@ -204,3 +204,4 @@ grey-400 = "#BDBDBD"
 grey-300 = "#E0E0E0"
 grey-200 = "#EEEEEE"
 grey-100 = "#F2F2F2"
+dark-green = "#B4EEB4"
