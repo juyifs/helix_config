@@ -110,9 +110,9 @@
 "ui.cursor.select" = { fg = "white", bg = "grey" }
 "ui.cursor.match" = { bg = "grey-300", modifiers = ["bold"] }
 "ui.cursor.primary" = { fg = "white", bg = "black" }
-"ui.cursor.primary.normal" = { fg = "white", bg = "black" }
-"ui.cursor.primary.insert" = { fg = "red", bg = "black" }
-"ui.cursor.primary.select" = { fg = "white", bg = "black" }
+"ui.cursor.primary.normal" = { fg = "white", bg = "blue" }
+"ui.cursor.primary.insert" = { fg = "white", bg = "green" }
+"ui.cursor.primary.select" = { fg = "white", bg = "purple" }
 
 "ui.gutter" = { fg = "grey-500" }
 "ui.gutter.selected" = { fg = "black" }
@@ -152,7 +152,7 @@
 "ui.menu.scroll" = { fg = "light-blue", bg = "white" }
 
 "ui.selection" = { bg = "grey-300", modifiers = ["dim"] }
-"ui.selection.primary" = { bg = "grey-300" }
+"ui.selection.primary" = { bg = "purple", fg = "white" }
 
 "ui.cursorline.primary" = { fg = "white", bg = "pale-blue" }
 "ui.cursorline.secondary" = { fg = "white", bg = "grey-200" }

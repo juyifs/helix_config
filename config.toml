@@ -25,9 +25,9 @@ character = "╎"                # 缩进引导线字符
 
 
 [editor.cursor-shape]
-insert = "bar"                 # 插入模式光标：竖线
+insert = "block"                 # 插入模式光标：竖线
 normal = "block"               # 普通模式光标：方块
-select = "underline"           # 选择模式光标：下划线
+select = "block"           # 选择模式光标：下划线
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]  # 状态栏左侧显示：模式、加载动画、文件名
