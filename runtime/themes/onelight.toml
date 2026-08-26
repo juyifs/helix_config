@@ -151,8 +151,8 @@
 "ui.menu.selected" = { fg = "white", bg = "light-blue" }
 "ui.menu.scroll" = { fg = "light-blue", bg = "white" }
 
-"ui.selection" = { bg = "dark-green" }
-"ui.selection.primary" = { bg = "dark-green" }
+"ui.selection" = { bg = "dark-green", fg = "white" }
+"ui.selection.primary" = { bg = "dark-green", fg = "white" }
 
 "ui.cursorline.primary" = { fg = "white", bg = "pale-blue" }
 "ui.cursorline.secondary" = { fg = "white", bg = "grey-200" }
@@ -160,7 +160,7 @@
 "ui.cursorcolumn.primary" = { fg = "white", bg = "grey-100" }
 "ui.cursorcolumn.secondary" = { fg = "white", bg = "grey-200" }
 
-"ui.highlight" = { bg = "pale-blue" }
+"ui.highlight" = { bg = "pale-blue", modifiers = ["bold"] }
 
 "ui.picker.header" = { fg = "purple"}
 "ui.picker.header.column.active" = { fg = "blue"}
