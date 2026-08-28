@@ -49,6 +49,10 @@ mode.select = "SELECT"         # 选择模式标签
 display-messages = true        # 在状态栏显示 LSP 消息
 auto-document-highlight = true  # 自动高亮文档中相同符号
 
+[editor.file-picker]
+hidden = false      # 允许显示隐藏文件（以点 . 开头的文件）
+git-ignore = true
+
 [keys.normal]
 "C-s" = ":wa"                # Ctrl+S：保存所有缓冲区
 "C-q" = "jump_backward"      # Ctrl+Q：向后跳转
