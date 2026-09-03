@@ -111,20 +111,26 @@ space.g.g = [
 
 # 当前行历史
 space.g.l = [
-  ":open %sh{ tmp=$(mktemp -t hx_gitlog.XXXXXX); git --no-pager log -p --date=iso --format='format:%%h (%%an %%ad) %%s' -L%{cursor_line},+1:%{buffer_name} >\"$tmp\" 2>&1; echo \"$tmp\"; }",
+  ":open %sh{ tmp=$(git rev-parse --show-toplevel)/git.log; git --no-pager log -p --date=iso --format='format:%%h (%%an %%ad) %%s' -L%{cursor_line},+1:%{buffer_name} >\"$tmp\" 2>&1; echo \"$tmp\"; }",
   ":set-language diff",
 ]
 
 # 当时选择行历史
-space.g.b = [
+space.g.L = [
   "extend_to_line_bounds",
-  ":open %sh{ tmp=$(mktemp -t hx_gitlog.XXXXXX); git --no-pager log -p --date=iso --format='format:%%h (%%an %%ad) %%s' -L%{selection_line_start},%{selection_line_end}:%{buffer_name} >\"$tmp\" 2>&1; echo \"$tmp\"; }",
+  ":open %sh{ tmp=$(git rev-parse --show-toplevel)/git.log; git --no-pager log -p --date=iso --format='format:%%h (%%an %%ad) %%s' -L%{selection_line_start},%{selection_line_end}:%{buffer_name} >\"$tmp\" 2>&1; echo \"$tmp\"; }",
   ":set-language diff",
 ]
 
 # 当前文件历史
 space.g.f = [
-  ":open %sh{ tmp=$(mktemp -t hx_gitlog.XXXXXX); git --no-pager log -p --follow --date=iso --format='format:%%h (%%an %%ad) %%s' %{buffer_name} >\"$tmp\" 2>&1; echo \"$tmp\"; }",
+  ":open %sh{ tmp=$(git rev-parse --show-toplevel)/git.log; git --no-pager log -p --follow --date=iso --format='format:%%h (%%an %%ad) %%s' %{buffer_name} >\"$tmp\" 2>&1; echo \"$tmp\"; }",
+  ":set-language diff",
+]
+
+# 当前目录历史
+space.g.F = [
+  ":open %sh{ tmp=$(git rev-parse --show-toplevel)/git.log; git --no-pager log -p --date=iso --format='format:%%h (%%an %%ad) %%s' >\"$tmp\" 2>&1; echo \"$tmp\"; }",
   ":set-language diff",
 ]
 
