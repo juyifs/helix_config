@@ -134,6 +134,9 @@ space.g.F = [
   ":set-language diff",
 ]
 
+#hunk预览
+space.g.h = ":sh ~/.config/helix/git-hunk.sh %{buffer_name} %{cursor_line}"
+
 space.c.f = ":pipe ~/.config/helix/my-formatter.sh %{buffer_name}"  # Space+c+f：使用自定义脚本格式化
 space.c.F = ":format"           # Space+c+F：使用内置 LSP 格式化
 space.c.c = "toggle_comments"  # Space+c+c：切换注释
