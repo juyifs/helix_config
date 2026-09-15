@@ -134,6 +134,19 @@ space.g.F = [
   ":set-language diff",
 ]
 
+# 当前文件最近历史
+space.g.e = [
+  ":open %sh{ tmp=$(git rev-parse --show-toplevel)/git.log; git --no-pager log -1 -p --follow --date=iso --format='format:%%h (%%an %%ad) %%s' %{buffer_name} >\"$tmp\" 2>&1; echo \"$tmp\"; }",
+  ":set-language diff",
+]
+
+# 当前目录最近历史
+space.g.E = [
+  ":open %sh{ tmp=$(git rev-parse --show-toplevel)/git.log; git --no-pager log -1 -p --date=iso --format='format:%%h (%%an %%ad) %%s' >\"$tmp\" 2>&1; echo \"$tmp\"; }",
+  ":set-language diff",
+]
+
+
 #hunk预览
 space.g.h = ":sh ~/.config/helix/git-hunk.sh %{buffer_name} %{cursor_line}"
 
